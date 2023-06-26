@@ -3,7 +3,7 @@ sequenceDiagram
     participant Browser
     participant Server
 
-    Note right of the Browser: User inputs a new note and presses "Save"
+    Note right of Browser: User inputs a new note and presses "Save"
         Browser-->Server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
         activate Server
         Server->>Browser: STATUS: 302 Found
