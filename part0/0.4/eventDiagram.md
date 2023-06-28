@@ -10,7 +10,9 @@ sequenceDiagram
     Note left of Server: STATUS 302 tells the browser that it is trying to access to a resource that has been moved.
     Note left of Server: Commonly used to redirect the browser to a specific URL.
     Browser-->>Server: GET: /exampleapp/notes
-    Server->>Browser: HTML Document
+    Server->>Browser: STATUS: 304 Not modified
+    Note left of Server: STATUS 304 tells the browser that it has not been modified since last request of said resource.
+    Note left of Server: Basically use the cache copy and don't download it again, saving bandwith and reducing load times.
     deactivate Server
 
     Browser-->>Server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
